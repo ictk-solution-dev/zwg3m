@@ -1,0 +1,29 @@
+## ZWG3M Firmware Release
+---
+
+
+### Build : [b1910a](/firmware/b1910a.bin)
+
+- Release date : 10 October 2019
+
+#### Features:
+
+- Wi-Fi Frequency band : 2.4GHz IEEE802.11 b/g/n
+- Wi-Fi security : WEP, WPA2, WPS
+- Operating mode : Station, Access Point, Repeater
+- Authentication : Open, WPA-PSK, WPA2-PSK, WPA-PSK/WPS2-PSK
+- Encryption : WEP, TKIP, AES, TKIP/AES
+- AWS IoT MQTT client based on MQTT 3.1.1
+- TLS 1.2
+
+#### New features:
+
+- None
+
+#### Chages:
+
+- None
+
+#### Fixes:
+
+- None

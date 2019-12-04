@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Getting Started with ZWG3M</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="zw.css" />
+</head>
+
+<body class="box-body">
+    <div class="cts">
+        <h1>Getting Started with ZWG3M</h1>
+
+        <h3>Getting Started with AWS IoT</h3>
+        <div class="rect-block">
+            <div class="rect-body">
+                <p>This integration enables you to build AWS IoT management system based on H/W root of trust for
+                    enhanced
+                    security: interact with Internet of Things, collect and process telemetry from devices or control
+                    devices remotely while protecting sensitive
+                    information in hardware format. Uplink and downlink messages are available on AWS IOT MQTT, allowing
+                    you
+                    to leverage Amazon services such as storing messages in DynamoDB , invoke Lambda functions and many
+                    more. </p>
+            </div>
+        </div>
+
+        <div class="rect-block">
+            <div class="rect-label">Connect to AWS IoT Core with MQTT and TLS</div><br>
+            <div class="rect-body">
+                <p style="color:red;">* Implemeataion is based on MQTT version 3.1.1 and TLS 1.2 with
+                    ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 ciphersuite.<br>
+                    * private key and certificates are encrptyed in HW-based security chip, supports enhacned
+                    secured working structure.</p>
+                <ol>
+                    <li>Log in to the AWS Management Console <a href="https://aws.amazon.com/console/">AWS Management
+                            Console</a><br><br>
+                    <li>Choose <img class="innerpic" src="img/image001.png" />IoT Core
+                        service<br><br>
+                    <li> In the left navigation panel, click on Manage/Things<br><br>
+                        <img class="innerpic" src="img/aws-1.png" width="110%" , height="110%" /><br><br>
+                    <li>Click on create button and add your device to the thing registery<br><br>
+                    <li>On the Certificate page, choose Use my certificate.<br><br>
+                        <img class="innerpic" src="img/aws-2.png" width="110%" , height="110%" /><br><br>
+                    <li>Select or register CA for your own certificate to register<br><br>
+                    <li>Upload a device certificate : the one installed in ZWG3M<br><br>
+                        <img class="innerpic" src="img/aws-3.png" width="110%" , height="110%" /><br><br>
+                    <li>Choose Polices under Secure menu<br><br>
+                    <li>Click on the create button and defines a set of policy actions<br><br>
+                        <img class="innerpic" src="img/aws-4.png" width="110%" , height="110%" /><br><br>                        
+                        Users can define their own policy (ex. control clients or limit messages) by attach policies to
+                        Thing certificate.<br><br>
+
+                        Below shows policy commands which grants permission for a device to connect using its thing name as
+                        the client ID. The device must be registered with AWS IoT or the connection would not work.<br><br>
+                        <img class="innerpic" src="img/image005.png" /><br><br>
+                    <li>Go to the certificates page, click on the three dots of your certificate and attach the
+                        selected policies to the thing certificate<br><br>
+                        <img class="innerpic" src="img/aws-5.png" width="110%" , height="110%" /><br><br>
+                </ol>
+            </div>
+        </div>
+
+
+        <div class="rect-block">
+            <div class="rect-label">Setting up the device (ZWG3M device):</div><br>
+            <div class="rect-body">
+                <ol>
+                    <li>Download test example script from the <a
+                            href="https://github.com/ictkholdings/zwg3m/tree/master/py">ICTK GitHub Repository</a>
+                    <li>ZWG3M contains amazon root CA, client certificate and private key already installed in PUF
+                        chip. The basic certificate is installed, but can be renewed or added upon request.
+                    <li>Run test script after connecting power and UART to ZWG3M module.(Please see the ZWG3M datasheet)
+                </ol>
+            </div>
+        </div>
+
+
+        <div class="rect-block">
+            <div class="rect-label">Configuration :</div><br>
+            <div class="rect-body">
+                This AT Commands allows users to set Wi-Fi information and application specific settings in order to
+                connect with the AWS IoT message broker.<br>
+                <br>• Wi-Fi configuration command<br><br>
+                <div>
+                    <i>AT+WIFI_SSID_STA=wifi_SSID</i><br>
+                    <i>AT+ WIFI_PW_STA=wifi _PW</i><br>
+                </div>
+
+                <br>• AWS configuration command<br><br>
+                <div>
+                    <i>AT+AWS_EP=aws_host_url</i><br>
+                    <i>AT+AWS_PN=port_number</i><br>
+                    <i>AT+AWS_TN=thing name</i><br>
+                    <i>AT+AWS_CID=cleintID</i><br>
+                </div>
+
+                <br>Or user can download below python code to configure the device. Please modify <a
+                    href="py/wifi.json">wifi.json</a> and <a href="py/aws.json">aws.json</a>
+                files accroding to your settings.<br><br>
+
+                <a href="py/zwg3m_configuration.py">zwg3m_configuration.py</a><br><br>
+
+                <a href="py/wifi.json">wifi.json</a><br><br>
+                <img class="innerpic" src="img/image002.png" /><br><br>
+                <a href="py/aws.json">aws.json</a><br><br>
+                <img class="innerpic" src="img/image003.png" /><br><br>
+                Run ZWG3M_Configuration<br><br>
+
+                Available port will be shown in windows. Once user selects the port for the ZWG3M, it will be stored
+                in json file name '<a href="py/zwg3m.json">zwg3m.json</a>'.<br><br>
+
+                Configuration process<br><br>
+
+                <img class="innerpic" src="img/image004.png" /><br><br>
+                Users Wi-Fi and AWS settings that was written on json file will be configured. Please reset the ZWG3M
+                after the
+                configuration by pressing the reset button on the evaluation board.<br><br>
+                <img class="innerpic" src="img/zwk1-1.png" width="100%" , height="100%" /><br><br>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="rect-block">
+        <div class="rect-label">MQTT Test : Subscibe / Publish</div><br>
+        <div class="rect-body">
+            ZWG3M can subscribes and publish messages to user specific topics using AT command.<br><br>
+            <div>
+                <i>AT+AWS_PUB=your_topic_here,QoS,Payload</i><br>
+                <i>AT+AWS_SUB=your_topic_here,QoS </i></div>
+            <div class="rect-body">
+                <br>Using AWS IoT device shadow, users can update or get information using sub/pub command
+                below.<br><br>
+                Out board currently support up to 3 topics to subscribe<br><br>
+            </div>
+            <div>
+                <i>AT+AWS_PUB=$aws/things/yourthingname/shadow/update,0,{ your input in json format }</i><br>
+                <i>AT+AWS_SUB=$aws/things/yourthingname/shadow/update,0</i><br>
+            </div>
+            <br>To publish or subscrice with python, please modify below json file with your topic, QoS and
+            payload.<br><br>
+            Publish updates to AWS IoT Device Shadow : <a href="py/pub.json">pub.json</a><br><br>
+            <img class="innerpic" src="img/image006.png" /><br><br>
+            <img class="innerpic" src="img/image007.png" /><br><br>
+            After run publish script as above, updated shadow states as in pub.json will be shown in thing
+            shadow in
+            amazon console.<br><br>
+            <img class="innerpic" src="img/aws-6b.png" width="110%" , height="110%" /><br><br>
+            Subscription to the AWS IoT Device Shadow : <a href="py/sub.json">sub.json</a><br><br>
+            <img class="innerpic" src="img/image008.png" /><br><br>
+            After modifying the topic in sub.json, run <a href="py/zwg3m_subscribe.py">zwg3m_subscribe.py</a><br><br>
+            <img class="innerpic" src="img/aws-7.png" width="110%" , height="110%" /><br><br>
+            By publish MQTT messages using amazon console, topic and payload will be shown in python shell as
+            below.<br><br>
+            <img class="innerpic" src="img/image009.png" /><br><br>
+        </div>
+    </div>
+
+    <div class="rect-block">
+        <div class="rect-label">Device Shadow : Update /Delta</div><br>
+        <div class="rect-body">
+            ZWG3M publishes updates to the AWS IoT Device Shadow using both AT command and python code
+            provided.<br><br>
+            <div>
+                <i>AT+AWS_UPDATE=act,key,type,value</i><br><br>
+            </div>
+            With configured data( clinetID , Endpoint etc) , above command will update item with desired
+            values.<br><br>
+
+            To update with python code, please modify update.json file with your input : <a
+                href="py/update.json">update.json</a><br><br>
+            <img class="innerpic" src="img/img011.png" /><br><br>
+            Below python shell shows successful execution of shadow updates. You can also observe updated shadow
+            values on your AWS console.<br><br>
+            <img class="innerpic" src="img/img012.png" /><br><br>
+            <img class="innerpic" src="img/img013.png" width="110%" , height="110%" /><br><br>
+            Delta in shadow is useful indicator which contains difference between the desired and reported states.
+            This will not show on shadow if desired and reported states are the same or there is no desired part in
+            Thing shadow. Below AT command will report delta states of the item when it triggers with delta.<br><br>
+            <div>
+                <i>AT+AWS_DELTA=key,type</i><br><br>
+            </div>
+            Below is the example of running the delta function in python. Please modify 'update.json' file with your key and type before running delta function.
+            It will return item with desired states. <br><br>
+            <img class="innerpic" src="img/img014.png" width="110%" , height="110%" /><br><br>
+            <img class="innerpic" src="img/img015.png" /><br><br>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="rect-block">
+        <div class="rect-label">TPM/SE security : G3 PUF IC</div><br>
+        <div class="rect-body">
+            <a href="TrustFi-security.html">TrustFi-security</a><br><br>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="rect-block">
+        The firmware binaries for ZWG3M module can be found <a href="https://ictkholdings.github.io/zwg3m/">on
+            GitHub</a>.<br>
+    </div>
+
+    </div>
+
+</body>
+
+</html>
