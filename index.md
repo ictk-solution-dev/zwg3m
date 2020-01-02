@@ -11,6 +11,8 @@
 
 ### ZWG3M Getting started : [Getting started](/zwg3m-GettingStarted.html)
 
+### ZWG3M  : [Provisioning the certificate to G3 device](/zwg3m-Certificate.html)
+
 ### ZWG3M Firmware Release : [Release](/Firmware-release.md)
 
 ### Contact email : [puf@ictk.com](http://ictk.com/contactUs/)
