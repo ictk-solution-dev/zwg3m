@@ -244,8 +244,9 @@ def main():
     G3_PRF_KS  = 0               
     G3_PRF_KT  = 48               
     G3_PRF_KI  = priInfo          
-    G3_PRF_CI  = certInfo         
-    packet = '{:x},{},{:02x},{:02x},{:02x},{:02x},{},{}'.format(G3_PRF_OPT, G3_PRF_DSC, G3_PRF_SN, G3_PRF_KU, G3_PRF_KS, G3_PRF_KT, G3_PRF_KI, G3_PRF_CI).upper()
+    G3_PRF_CI  = certInfo
+    G3_PRF_PF = 153
+    packet = '{:x},{},{:02x},{:02x},{:02x},{:02x},{},{},{:x}'.format(G3_PRF_OPT, G3_PRF_DSC, G3_PRF_SN, G3_PRF_KU, G3_PRF_KS, G3_PRF_KT, G3_PRF_KI, G3_PRF_CI, G3_PRF_PF).upper()
     #print(packet)
     dev.g3_profile(packet)
     time.sleep(1.0)
@@ -319,8 +320,9 @@ def main():
     G3_PRF_KS  = 0                
     G3_PRF_KT  = 48               
     G3_PRF_KI  = 0          
-    G3_PRF_CI  = certInfo         
-    packet = '{:x},{},{:02x},{:02x},{:02x},{:02x},{:0<8x},{}'.format(G3_PRF_OPT, G3_PRF_DSC, G3_PRF_SN, G3_PRF_KU, G3_PRF_KS, G3_PRF_KT, G3_PRF_KI, G3_PRF_CI).upper()
+    G3_PRF_CI  = certInfo
+    G3_PRF_PF = 153
+    packet = '{:x},{},{:02x},{:02x},{:02x},{:02x},{:0<8x},{},{:x}'.format(G3_PRF_OPT, G3_PRF_DSC, G3_PRF_SN, G3_PRF_KU, G3_PRF_KS, G3_PRF_KT, G3_PRF_KI, G3_PRF_CI, G3_PRF_PF).upper()
     #print(packet)
     dev.g3_profile(packet)
     time.sleep(1.0)
