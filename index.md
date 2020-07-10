@@ -15,7 +15,7 @@
 
 ### ZWG3M Firmware Release : [Release](/Firmware-release.md)
 
-### ZWG3M FreeRTOS : [Getting Started (FreeRTOS Demo)](/zwg3m-GettingStarted (FreeRTOS Demo).html)
+### ZWG3M FreeRTOS : [Getting Started (FreeRTOS Demo)](/zwg3m-GettingStarted(FreeRTOS-Demo).html)
 
 ### ZWG3M  : [Secured IoT Platform](/zwg3m-Secured Iot Platform.html)
 
