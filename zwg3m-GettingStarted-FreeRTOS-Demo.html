@@ -7,7 +7,7 @@
 	<META NAME="AUTHOR" CONTENT="nayoung kim">
 	<META NAME="CREATED" CONTENT="20200708;44000000000000">
 	<META NAME="CHANGEDBY" CONTENT="nayoung kim">
-	<META NAME="CHANGED" CONTENT="20200708;44000000000000">
+	<META NAME="CHANGED" CONTENT="20200805;24200000000000">
 	<META NAME="AppVersion" CONTENT="16.0000">
 	<META NAME="DocSecurity" CONTENT="0">
 	<META NAME="HyperlinksChanged" CONTENT="false">
@@ -158,7 +158,7 @@ your host computer to ZWG3M</FONT></FONT></FONT></P>
 <BR><BR>
 </P>
 <P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img5.png" NAME="그림 1" ALIGN=BOTTOM WIDTH=602 HEIGHT=372 BORDER=0></P>
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img7.png" NAME="그림 1" ALIGN=BOTTOM WIDTH=602 HEIGHT=372 BORDER=0></P>
 <P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Set
 Up Your Development Environment</B></FONT></FONT></FONT></P>
@@ -184,7 +184,7 @@ and install Flash tool (MTK lab) and firmware </B></FONT></FONT></FONT>
 	</P>
 </OL>
 <P ALIGN=LEFT STYLE="margin-left: 0.44in; text-indent: 0.56in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><a href="https://github.com/ictk-solution-dev/amazon-freertos-demo.git">zwg3m_flash.bat</a></FONT></FONT></P>
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">zwg3m_flash.bat</FONT></FONT></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.44in; text-indent: 0.56in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">Flash_download.cfg</FONT></FONT></P>
 <P ALIGN=LEFT STYLE="margin-left: 1in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
@@ -249,13 +249,79 @@ and install Flash tool (MTK lab) and firmware </B></FONT></FONT></FONT>
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=4 STYLE="font-size: 15pt"><B>Configure
 ZWG3M board for FreeRTOS demo project </B></FONT></FONT></FONT>
 </P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Connect
+to AWS IoT Core </B></FONT></FONT></FONT>
+</P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Log
+	in to the&nbsp;</FONT></FONT></FONT><A HREF="https://aws.amazon.com/console/"><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><U><B>AWS
+	Management Console</B></U></FONT></FONT></FONT></A></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Choose
+		<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img5.png" NAME="shape1025" ALIGN=BOTTOM WIDTH=13 HEIGHT=13 BORDER=0></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>
+	IoT Core service</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	 </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>In
+	the left navigation panel, click on&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Manage/Things</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	</FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img9.png" NAME="그림 2" ALIGN=BOTTOM WIDTH=485 HEIGHT=271 BORDER=0></P>
+<OL START=4>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Click
+	on create button and add your device to the thing registry </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>On
+	the Certificate page, choose Use </FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>my
+	certificate</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Select
+	or register CA</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	for your own certificate to register </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Upload
+	a device certificate: the one installed in ZWG3M  </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Choose
+	</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Polices</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	under Secure menu</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Click
+	on the create button and defines a set of policy actions </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img4.png" NAME="그림 6" ALIGN=BOTTOM WIDTH=545 HEIGHT=360 BORDER=0></P>
+<OL START=10>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"> <FONT FACE="Segoe UI, serif"><FONT SIZE=3>Go
+	to the certificates page, click on the three dots of your
+	certificate and </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"> <FONT FACE="Segoe UI, serif"><FONT SIZE=3>attach
+	the selected policies to the thing certificate</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Setting
+up the ZWG3M device </B></FONT></FONT></FONT>
+</P>
 <P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>This
 AT command (or python script) allows users to set WiFi information
 and application specific settings in order to connect the board with
 the AWS IoT. </FONT></FONT></FONT>
 </P>
-<OL>
+<OL START=12>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Download
 	example script from the </FONT></FONT></FONT><A HREF="https://github.com/ictk-solution-dev/zwg3m/tree/master/py"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>ICTK
@@ -318,8 +384,8 @@ user can use below python program to configure the device. Please
 modify wifi.json and aws.json files accroding to your settings. </FONT></FONT></FONT>
 </P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>(amazon-freertos-demo\tools\config_tools\zwg3m_configuration.exe
-) </FONT></FONT></FONT>
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>(
+zwg3m\py\zwg3m_configuration.py ) </FONT></FONT></FONT>
 </P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT FACE="Space Mono, serif"><FONT SIZE=2 STYLE="font-size: 10pt">wifi.json
@@ -329,11 +395,11 @@ modify wifi.json and aws.json files accroding to your settings. </FONT></FONT></
 <BR><BR>
 </P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img6.png" NAME="shape1026" ALIGN=BOTTOM WIDTH=342 HEIGHT=171 BORDER=0></P>
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img8.png" NAME="shape1026" ALIGN=BOTTOM WIDTH=342 HEIGHT=171 BORDER=0></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT FACE="Space Mono, serif"><FONT SIZE=2 STYLE="font-size: 10pt">aws.json</FONT></FONT></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img4.png" NAME="shape1027" ALIGN=BOTTOM WIDTH=348 HEIGHT=106 BORDER=0></P>
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img6.png" NAME="shape1027" ALIGN=BOTTOM WIDTH=348 HEIGHT=106 BORDER=0></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Run
 ZWG3M_Configuration.exe.</FONT></FONT></FONT></P>
