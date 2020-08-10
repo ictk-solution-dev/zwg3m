@@ -5,9 +5,9 @@
 	<TITLE></TITLE>
 	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
 	<META NAME="AUTHOR" CONTENT="nayoung kim">
-	<META NAME="CREATED" CONTENT="20200708;44000000000000">
+	<META NAME="CREATED" CONTENT="20200810;13700000000000">
 	<META NAME="CHANGEDBY" CONTENT="nayoung kim">
-	<META NAME="CHANGED" CONTENT="20200806;13200000000000">
+	<META NAME="CHANGED" CONTENT="20200810;33500000000000">
 	<META NAME="AppVersion" CONTENT="16.0000">
 	<META NAME="DocSecurity" CONTENT="0">
 	<META NAME="HyperlinksChanged" CONTENT="false">
@@ -158,7 +158,7 @@ your host computer to ZWG3M</FONT></FONT></FONT></P>
 <BR><BR>
 </P>
 <P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img7.png" NAME="그림 1" ALIGN=BOTTOM WIDTH=602 HEIGHT=372 BORDER=0></P>
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img1.png" NAME="그림 1" ALIGN=BOTTOM WIDTH=602 HEIGHT=372 BORDER=0></P>
 <P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Set
 Up Your Development Environment</B></FONT></FONT></FONT></P>
@@ -178,9 +178,10 @@ and install Flash tool (MTK lab) and firmware </B></FONT></FONT></FONT>
 	on your host computer.</FONT></FONT></FONT></P>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Download
-	the latest firmware along with build application for your
-	convenience. Locate these four files in the IoT Flashtool folder you
-	downloaded above.  </FONT></FONT></FONT>
+	the </FONT></FONT></FONT><A HREF="https://github.com/ictk-solution-dev/amazon-freertos-demo.git"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>latest
+	firmware along with build application</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	for your convenience. Locate these four files in the IoT Flashtool
+	folder you downloaded above.  </FONT></FONT></FONT>
 	</P>
 </OL>
 <P ALIGN=LEFT STYLE="margin-left: 0.44in; text-indent: 0.56in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
@@ -194,10 +195,10 @@ and install Flash tool (MTK lab) and firmware </B></FONT></FONT></FONT>
 <OL START=3>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Modify
-	flashtool.bat and flash_donwload.cfg with the correct path.</FONT></FONT></FONT></P>
+	zwg3m_flash.bat and flash_donwload.cfg with the correct path.</FONT></FONT></FONT></P>
 </OL>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; text-indent: 0.31in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<FONT COLOR="#24292e">•  </FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>flashtool.bat
+<FONT COLOR="#24292e">•  </FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>zwg3m_flash.bat
 </FONT></FONT></FONT>
 </P>
 <OL>
@@ -233,13 +234,17 @@ and install Flash tool (MTK lab) and firmware </B></FONT></FONT></FONT>
 	</OL>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Run
-	flahstool.bat and when you see the message below, </FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>press
+	zwg3m_flash.bat </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>When
+	you see the message below, </FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>press
 	the reset pin</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
 	for download firmware. </FONT></FONT></FONT>
 	</P>
 </OL>
 <P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img1.png" NAME="그림 3" ALIGN=BOTTOM WIDTH=549 HEIGHT=287 BORDER=0></P>
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img3.png" NAME="그림 3" ALIGN=BOTTOM WIDTH=549 HEIGHT=287 BORDER=0></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img2.png" NAME="graphics1" ALIGN=BOTTOM WIDTH=268 HEIGHT=254 BORDER=0></P>
 <P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
@@ -260,7 +265,7 @@ to AWS IoT Core </B></FONT></FONT></FONT>
 	Management Console</B></U></FONT></FONT></FONT></A></P>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Choose
-		<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img5.png" NAME="shape1025" ALIGN=BOTTOM WIDTH=13 HEIGHT=13 BORDER=0></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>
+		<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img16.png" NAME="shape1025" ALIGN=BOTTOM WIDTH=13 HEIGHT=13 BORDER=0></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>
 	IoT Core service</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
 	 </FONT></FONT></FONT>
 	</P>
@@ -271,25 +276,40 @@ to AWS IoT Core </B></FONT></FONT></FONT>
 	</P>
 </OL>
 <P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img10.png" NAME="그림 2" ALIGN=BOTTOM WIDTH=485 HEIGHT=271 BORDER=0></P>
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img4.png" NAME="그림 2" ALIGN=BOTTOM WIDTH=485 HEIGHT=271 BORDER=0></P>
 <OL START=4>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Click
-	on create button and add your device to the thing registry </FONT></FONT></FONT>
-	</P>
+	on create button and give your device a name and press create</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img5.png" NAME="그림 7" ALIGN=BOTTOM WIDTH=478 HEIGHT=284 BORDER=0></P>
+<OL START=5>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>On
 	the Certificate page, choose </FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Use
 	my certificate</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img6.png" NAME="그림 6" ALIGN=BOTTOM WIDTH=477 HEIGHT=278 BORDER=0></P>
+<OL START=6>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Select
 	or register CA</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
 	for your own certificate to register </FONT></FONT></FONT>
 	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img7.png" NAME="그림 11" ALIGN=BOTTOM WIDTH=477 HEIGHT=266 BORDER=0></P>
+<OL START=7>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Upload
-	a device certificate: the one installed in ZWG3M  </FONT></FONT></FONT>
+	a device certificate: the one installed in ZWG3M </FONT></FONT></FONT>
 	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img8.png" NAME="그림 9" ALIGN=BOTTOM WIDTH=477 HEIGHT=277 BORDER=0></P>
+<OL START=8>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Choose
 	</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Polices</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
@@ -301,23 +321,25 @@ to AWS IoT Core </B></FONT></FONT></FONT>
 	</P>
 </OL>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img4.png" NAME="그림 5" ALIGN=BOTTOM WIDTH=601 HEIGHT=352 BORDER=0></P>
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img9.png" NAME="그림 5" ALIGN=BOTTOM WIDTH=601 HEIGHT=352 BORDER=0></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>&lt;
 policy statements&gt; </FONT></FONT></FONT>
 </P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img9.png" NAME="그림 7" ALIGN=BOTTOM WIDTH=500 HEIGHT=426 BORDER=0></P>
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img10.png" NAME="graphics2" ALIGN=BOTTOM WIDTH=500 HEIGHT=426 BORDER=0></P>
 <OL START=10>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"> <FONT FACE="Segoe UI, serif"><FONT SIZE=3>Go
 	to the certificates page, click on the three dots of your
-	certificate and </FONT></FONT></FONT>
+	certificate and attach the above policy to the certificate </FONT></FONT></FONT>
 	</P>
-	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-	<FONT COLOR="#24292e"> <FONT FACE="Segoe UI, serif"><FONT SIZE=3>attach
-	the selected policies to the thing certificate</FONT></FONT></FONT></P>
 </OL>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img11.png" NAME="그림 10" ALIGN=BOTTOM WIDTH=525 HEIGHT=262 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
 <P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Setting
 up the ZWG3M device </B></FONT></FONT></FONT>
@@ -328,15 +350,11 @@ AT command (or python script) allows users to set WiFi information
 and application specific settings in order to connect the board with
 the AWS IoT. </FONT></FONT></FONT>
 </P>
-<OL START=12>
+<OL>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Download
-	example script from the </FONT></FONT></FONT><A HREF="https://github.com/ictk-solution-dev/zwg3m/tree/master/py"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>ICTK
-	Github Repository</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
-	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Run
-	test script after downloading firmware to ZWG3M board. </FONT></FONT></FONT>
-	</P>
+	all the python scripts from the </FONT></FONT></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=3><A HREF="https://github.com/ictk-solution-dev/zwg3m/tree/master/py">ICTK
+	Github Repository</A>.</FONT></FONT></P>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Please
 	use this guide to provision the certificate to ZWG3M: </FONT></FONT></FONT><A HREF="https://ictk-solution-dev.github.io/zwg3m/zwg3m-Certificate.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>getting
@@ -345,7 +363,8 @@ the AWS IoT. </FONT></FONT></FONT>
 	</P>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Run
-	test script or AT command to configure the settings </FONT></FONT></FONT>
+	zwg3_configuration.py or AT command to configure the settings of
+	your device.  </FONT></FONT></FONT>
 	</P>
 </OL>
 <P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
@@ -391,8 +410,22 @@ user can use below python program to configure the device. Please
 modify wifi.json and aws.json files accroding to your settings. </FONT></FONT></FONT>
 </P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>(
-zwg3m\py\zwg3m_configuration.py ) </FONT></FONT></FONT>
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>User
+can find </FONT></FONT></FONT><FONT FACE="Space Mono, serif"><FONT SIZE=2 STYLE="font-size: 9pt"><I>aws_host_url
+ </I></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>from
+the </FONT></FONT></FONT><A HREF="https://aws.amazon.com/console/"><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><U><B>AWS
+Management Console</B></U></FONT></FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.
+</FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Go to
+IoT core and click the settings at the left panel, customer endpoint
+is shown as below.  </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img12.png" NAME="그림 13" ALIGN=BOTTOM WIDTH=502 HEIGHT=287 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"> </FONT>
 </P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT FACE="Space Mono, serif"><FONT SIZE=2 STYLE="font-size: 10pt">wifi.json
@@ -402,14 +435,14 @@ zwg3m\py\zwg3m_configuration.py ) </FONT></FONT></FONT>
 <BR><BR>
 </P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img8.png" NAME="shape1026" ALIGN=BOTTOM WIDTH=342 HEIGHT=171 BORDER=0></P>
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img13.png" NAME="shape1026" ALIGN=BOTTOM WIDTH=342 HEIGHT=171 BORDER=0></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT FACE="Space Mono, serif"><FONT SIZE=2 STYLE="font-size: 10pt">aws.json</FONT></FONT></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img6.png" NAME="shape1027" ALIGN=BOTTOM WIDTH=348 HEIGHT=106 BORDER=0></P>
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img14.png" NAME="shape1027" ALIGN=BOTTOM WIDTH=348 HEIGHT=106 BORDER=0></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Run
-ZWG3M_Configuration.exe.</FONT></FONT></FONT></P>
+ZWG3M_Configuration.py.</FONT></FONT></FONT></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Available
 port will be shown in windows. Once user selects the port for the
@@ -422,7 +455,7 @@ ZWG3M, it will be stored in json file name 'zwg3m.json'.</FONT></FONT></FONT></P
 process </FONT></FONT></FONT>
 </P>
 <P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img3.png" NAME="shape1028" ALIGN=BOTTOM WIDTH=530 HEIGHT=240 BORDER=0></P>
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img15.png" NAME="shape1028" ALIGN=BOTTOM WIDTH=530 HEIGHT=240 BORDER=0></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Users
 Wifi and AWS setting that was written on json file will be
