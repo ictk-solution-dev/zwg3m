@@ -346,38 +346,38 @@ policy statements&gt; </FONT></FONT></FONT>
 </P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"> <FONT FACE="Segoe UI, serif"><FONT SIZE=2> {<br>
-   &nbsp;&nbsp;"Version": "2012-10-17",<br>
-  &nbsp;&nbsp;"Statement": [<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Effect": "Allow",<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Action": "iot:Connect",<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": "arn:aws:iot:XXXXX:client/${iot:Connection.Thing.ThingName}"<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Effect": "Allow",<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Action": "iot:Subscribe",<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": [<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topicfilter/$aws/things/${iot:Connection.Thing.ThingName}/shadow/*",<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topicfilter/${iot:Connection.Thing.ThingName}/*"<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Effect": "Allow",<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Action": "iot:Receive",<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": [<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topic/$aws/things/${iot:Connection.Thing.ThingName}/shadow/*",<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topic/${iot:Connection.Thing.ThingName}/*"<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Effect": "Allow",<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Action": "iot:Publish",<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": [<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topic/$aws/things/${iot:Connection.Thing.ThingName}/shadow/*",<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topic/${iot:Connection.Thing.ThingName}/*"<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-  &nbsp;&nbsp;]<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;"Version": "2012-10-17",<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;"Statement": [<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Effect": "Allow",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Action": "iot:Connect",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": "arn:aws:iot:XXXXX:client/${iot:Connection.Thing.ThingName}"<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Effect": "Allow",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Action": "iot:Subscribe",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": [<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topicfilter/$aws/things/${iot:Connection.Thing.ThingName}/shadow/*",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topicfilter/${iot:Connection.Thing.ThingName}/*"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Effect": "Allow",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Action": "iot:Receive",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": [<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topic/$aws/things/${iot:Connection.Thing.ThingName}/shadow/*",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topic/${iot:Connection.Thing.ThingName}/*"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Effect": "Allow",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Action": "iot:Publish",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": [<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topic/$aws/things/${iot:Connection.Thing.ThingName}/shadow/*",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topic/${iot:Connection.Thing.ThingName}/*"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;]<br>
 }<br>
 </FONT></FONT></FONT>
 </P>
