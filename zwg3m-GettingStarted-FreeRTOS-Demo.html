@@ -192,7 +192,7 @@ and install Flash tool (MTK lab) and firmware </B></FONT></FONT></FONT>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>To
 	set up your environment, you need to download and install “</FONT></FONT></FONT><A HREF="https://labs.mediatek.com/en/download/vhjwqul5"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>IoT
-	FlashTool for Windows</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>”
+	FlashTool for MT7686</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>”
 	on your host computer.</FONT></FONT></FONT></P>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Download
@@ -257,7 +257,7 @@ and install Flash tool (MTK lab) and firmware </B></FONT></FONT></FONT>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>When
 	you see the message below, </FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>press
-	the reset pin</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	the reset button</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
 	for download firmware. </FONT></FONT></FONT>
 	</P>
 </OL>
@@ -345,7 +345,43 @@ to AWS IoT Core </B></FONT></FONT></FONT>
 policy statements&gt; </FONT></FONT></FONT>
 </P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img21.png" NAME="graphics3" ALIGN=BOTTOM WIDTH=800 HEIGHT=450 BORDER=0></P>
+	<FONT COLOR="#24292e"> <FONT FACE="Segoe UI, serif"><FONT SIZE=2> {<br>
+   &nbsp;&nbsp;"Version": "2012-10-17",<br>
+  &nbsp;&nbsp;"Statement": [<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Effect": "Allow",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Action": "iot:Connect",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": "arn:aws:iot:XXXXX:client/${iot:Connection.Thing.ThingName}"<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Effect": "Allow",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Action": "iot:Subscribe",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": [<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topicfilter/$aws/things/${iot:Connection.Thing.ThingName}/shadow/*",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topicfilter/${iot:Connection.Thing.ThingName}/*"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Effect": "Allow",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Action": "iot:Receive",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": [<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topic/$aws/things/${iot:Connection.Thing.ThingName}/shadow/*",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topic/${iot:Connection.Thing.ThingName}/*"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Effect": "Allow",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Action": "iot:Publish",<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Resource": [<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topic/$aws/things/${iot:Connection.Thing.ThingName}/shadow/*",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arn:aws:iot: XXXXX:topic/${iot:Connection.Thing.ThingName}/*"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+  &nbsp;&nbsp;]<br>
+}<br>
+</FONT></FONT></FONT>
+</P>
+
 <OL START=10>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"> <FONT FACE="Segoe UI, serif"><FONT SIZE=3>Go
