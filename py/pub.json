@@ -1,5 +1,0 @@
-{
-  "TOPIC"   : "$aws/things/Thing1/shadow/update",
-  "QOS"     : 0,
-  "PAYLOAD" : "{\"state\":{\"reported\":{\"temp\":50}}}"
-}

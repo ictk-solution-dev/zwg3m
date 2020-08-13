@@ -1,6 +1,0 @@
-{
-  "AWS ROOT CA" : "AmazonRootCA3.pem",
-  "USER KEY" : "privkey.key",
-  "USER CERT" : "certification.crt",
-  "G3 PASSWORD" : "XXXXXXX"
-}
