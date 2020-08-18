@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
+	<META NAME="AUTHOR" CONTENT="DoKyung">
+	<META NAME="CREATED" CONTENT="20200814;12400000000000">
+	<META NAME="CHANGEDBY" CONTENT="nayoung kim">
+	<META NAME="CHANGED" CONTENT="20200814;31500000000000">
+	<META NAME="AppVersion" CONTENT="16.0000">
+	<META NAME="DocSecurity" CONTENT="0">
+	<META NAME="HyperlinksChanged" CONTENT="false">
+	<META NAME="LinksUpToDate" CONTENT="false">
+	<META NAME="ScaleCrop" CONTENT="false">
+	<META NAME="ShareDoc" CONTENT="false">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 1in; margin-right: 1in; margin-top: 1.18in; margin-bottom: 1in }
+		P { margin-bottom: 0.08in; direction: ltr; widows: 0; orphans: 0 }
+		A:link { color: #0563c1; so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" LINK="#0563c1" DIR="LTR">
+<P STYLE="margin-bottom: 0.11in"><FONT FACE="Segoe UI, serif"><FONT SIZE=6 STYLE="font-size: 22pt"><B>Certificate
+Creation Guide</B></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=4><B>Download
+openssl to your PC :</B></FONT></FONT></FONT><FONT SIZE=1 STYLE="font-size: 8pt">
+ </FONT><A HREF="https://www.openssl.org"><FONT FACE="Segoe UI, serif"><FONT SIZE=4><B>https://www.openssl.org</B></FONT></FONT></A></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=4><B>Create
+CA certificate </B></FONT></FONT></FONT>
+</P>
+<OL>
+	<LI><P STYLE="margin-bottom: 0.11in"><FONT FACE="Segoe UI, serif">CA
+	Certificate key Generation</FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0in; background: #f6f8fa; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">openssl ecparam
+-genkey -name prime256v1 -out </FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><I>ca_key_filename.key</I></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.11in"><BR><BR>
+</P>
+<OL START=2>
+	<LI><P STYLE="margin-bottom: 0.11in"><FONT FACE="Segoe UI, serif">CA
+	Certificate csr Generation</FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0in; background: #f6f8fa; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">openssl req -new
+-key </FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><I>ca_key_filename.key</I></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">
+-out </FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><I>cacert_csr_filename.csr</I></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.11in"><BR><BR>
+</P>
+<OL START=3>
+	<LI><P STYLE="margin-bottom: 0.11in"><FONT FACE="Segoe UI, serif">CA
+	Certificate crt Generation</FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0in; background: #f6f8fa; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="굴림체, serif"><FONT SIZE=3><FONT FACE="굴림체, serif"><FONT SIZE=3><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=2>openssl
+x509 -req -extensions v3_ca -set_serial 1 -in </FONT></FONT></FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=2><I>cacert_csr_filename.csr</I></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">
+</FONT></FONT><FONT FACE="굴림체, serif"><FONT SIZE=3><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=2>-signkey
+</FONT></FONT></FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=2><I>ca_key_filename.key</I></FONT></FONT></FONT><FONT FACE="굴림체, serif"><FONT SIZE=3><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=2>
+ -out </FONT></FONT></FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=2><I>ca_certificate_filename.crt</I></FONT></FONT></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.11in"><BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=4><B>Create
+Client Certificate </B></FONT></FONT></FONT>
+</P>
+<OL>
+	<LI><P STYLE="margin-bottom: 0.11in"><FONT FACE="Segoe UI, serif">Client
+	Certificate Key Generation</FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0in; background: #f6f8fa; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="굴림체, serif"><FONT SIZE=3><FONT FACE="굴림체, serif"><FONT SIZE=3><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=2>openssl
+ecparam -genkey -name prime256v1 -out </FONT></FONT></FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=2><I>client_key_filename.key</I></FONT></FONT></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.11in"><BR><BR>
+</P>
+<OL START=2>
+	<LI><P STYLE="margin-bottom: 0.11in"><FONT FACE="Segoe UI, serif">Client
+	Certificate csr Generation</FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0in; background: #f6f8fa; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="굴림체, serif"><FONT SIZE=3><FONT FACE="굴림체, serif"><FONT SIZE=3><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=2>openssl
+req -new -key </FONT></FONT></FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=2><I>client_key_filename.key</I></FONT></FONT></FONT><FONT FACE="굴림체, serif"><FONT SIZE=3><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=2>
+-out </FONT></FONT></FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=2><I>clientcert_csr_filename.csr</I></FONT></FONT></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.11in"><BR><BR>
+</P>
+<OL START=3>
+	<LI><P STYLE="margin-bottom: 0.11in"><FONT FACE="Segoe UI, serif">Client
+	Certificate crt Generation</FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0in; background: #f6f8fa; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="굴림체, serif"><FONT SIZE=3><FONT FACE="굴림체, serif"><FONT SIZE=3><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=2>openssl
+x509 -req -extensions v3_user -in </FONT></FONT></FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=2><I>clientcert_csr_filename.csr</I></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">
+</FONT></FONT><FONT FACE="굴림체, serif"><FONT SIZE=3><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=2>-CA
+</FONT></FONT></FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=2><I>ca_certificate_filename.crt</I></FONT></FONT></FONT><FONT FACE="굴림체, serif"><FONT SIZE=3><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=2>
+-CAcreateserial  -CAkey  </FONT></FONT></FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=2><I>ca_key_filename.key</I></FONT></FONT></FONT><FONT FACE="굴림체, serif"><FONT SIZE=3><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=2>
+ -out </FONT></FONT></FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=2><I>client_certificate_filename.crt</I></FONT></FONT></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.11in"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.11in"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.11in">*please refer the below link to use
+other options.</P>
+<P STYLE="margin-bottom: 0.11in">openssl commands :
+<A HREF="https://www.openssl.org/docs/man1.1.1/man1/">https://www.openssl.org/docs/man1.1.1/man1/</A></P>
+</BODY>
+</HTML>

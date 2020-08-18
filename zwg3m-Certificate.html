@@ -1,100 +1,136 @@
-<!doctype html>
-<html>
-
-<head>
-    <title>Getting Started with ZWG3M</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="zw.css">
-</head>
-
-<body class="box-body">
-    <div class="cts">
-        <h1>Getting Started with ZWG3M</h1>
-
-        <h3> Provisioning the certificate to G3 device </h3>
-        <div class="rect-block">
-            <div class="rect-body">
-                <p>ZWG3M includes G3 device, an ICTK's PUF based-security chip that performs authentication and
-                    cryptography operations. It is suited for performing secure authentication, protecting firmware ,
-                    preventing counterfeiting and storing secure data. This guide will provide writing certificates and
-                    keys to G3 via ZWG3M board so that the customer can write their personal certificate to connect AWS
-                    IoT. </p>
-            </div>
-        </div>
-
-        <div class="rect-block">
-            <div class="rect-label"> Certificate Requirements </div><br>
-            <div class="rect-body">
-                <div>Cryptographic algorithm: ECC(ECDSA and ECDH) with secp256r1(NIST P256) </div>
-                <ul>
-                    <li>ECC curve name : prime256v1 <br>
-                    <li>Private key file extension : *.key<br>
-                    <li>Certificate file extension : *.crt<br>
-                </ul>
-            </div>
-        </div>
-
-        <div class="rect-block">
-            <div class="rect-label"> Use my certificate for AWS IoT Core: </div><br>
-            <div class="rect-body">
-                <ol>
-                    <li>Log in to the <a href="https://aws.amazon.com/console/">AWS Management
-                            Console</a><br><br>
-                    <li>Choose <img class="innerpic" src="img/image001.png" />IoT Core
-                        service<br><br>
-                    <li> In the left navigation panel, click on Manage/Things<br><br>
-                        <img class="innerpic" src="img/certi-a.png" width="110%" , height="110%" /><br><br>
-                    <li>Click on create button and add your device to the thing registery<br><br>
-                    <li>On the Certificate page, choose Use my certificate.<br><br>
-                        <img class="innerpic" src="img/certi-b.png" width="110%" , height="110%" /><br><br>
-                    <li>Select or register CA for your own certificate to register.<br><br>
-                        <img class="innerpic" src="img/certi-c.png" width="110%" , height="110%" /><br><br>
-                    <li>Upload a device certificate : the one installed in ZWG3M<br><br>
-                        <img class="innerpic" src="img/certi-d.png" width="110%" , height="110%" /><br><br>
-                </ol>
-            </div>
-        </div>
-
-        <div class="rect-block">
-            <div class="rect-label"> Write your certificate to ZWG3M: </div><br>
-			g3 password will be set differently with client’s request. Unless defined, it is set to default value : 11223344 . Please contact puf@ictk.com for detail information.
-            <div class="rect-body">
-                <ol>
-                    <li>Download test example script from the ICTK GitHub repository <a
-                            href="https://github.com/ictkholdings/zwg3m/tree/master/py"> Python script(py)</a><br>
-                    <li>G3 supports ECC but not RSA . please use ECC 256 bit key for Amazon Trust Services
-                        Endpoints.<br>
-                    <li>RootCA : <a href="https://www.amazontrust.com/repository/AmazonRootCA3.pem">AmazonRootCA
-                            certificate</a><br>
-                    <li> Insert AmazonRootCA certificate, client key and client certificate on your python script
-                        folder.<br><br>
-                    <li>We have provided python code that writes certificate and key to G3 device.<br><br>
-                    <li> Please modify the certi.json file accordingly.<br><br>
-                        AWS ROOT CA : amazon root certificate<br>
-                        USER KEY : your own private key<br>
-                        USER CERT : your certificate<br>
-                        G3 PASSWORD : password provided from vendor<br><br>
-
-                        <img class="innerpic" src="img/certi-e.png"><br><br>
-                    <li>Run script : zwg3m_certi.py<br><br>
-                        <div>Available port will be shown in windows. Once user selects the port for the ZWG3M, it will
-                            be stored in json file name 'zwg3m.json'<br><br>
-
-                    <li>Writing process<br><br>
-                        <p style="color:red;">*please disable Wi-Fi connection prior to below process.
-                            Any interruption may cause false
-                            input to G3 chip.</p>
-                        <img class="innerpic" src="img/certi-f.png"><br><br>
-                        <div>Writing process may take a minutes and it will be shown as above. Please reset the ZWG3M
-                            board after above process.
-                        </div>
-            </div>
-            </ol>
-        </div>
-    </div>
-
-    </div>
-
-</body>
-
-</html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
+	<META NAME="CREATED" CONTENT="20200812;32700000000000">
+	<META NAME="CHANGED" CONTENT="20200818;23300000000000">
+	<META NAME="AppVersion" CONTENT="16.0000">
+	<META NAME="DocSecurity" CONTENT="0">
+	<META NAME="HyperlinksChanged" CONTENT="false">
+	<META NAME="LinksUpToDate" CONTENT="false">
+	<META NAME="ScaleCrop" CONTENT="false">
+	<META NAME="ShareDoc" CONTENT="false">
+	<META NAME="version" CONTENT="0900.0001.01">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 1in; margin-right: 1in; margin-top: 1.18in; margin-bottom: 1in }
+		P { margin-bottom: 0.08in; direction: ltr; widows: 0; orphans: 0 }
+		A:link { color: #0000ff; so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" LINK="#0000ff" DIR="LTR">
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.13in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#1e1e3c"><FONT FACE="Segoe UI, serif"><FONT SIZE=6><B>Getting
+Started with ZWG3M</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.23in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#1e1e3c"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Provisioning
+the certificate to G3 device</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.23in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2"><A NAME="_GoBack"></A>
+<FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt">ZWG3M
+includes G3 device, an ICTK’s PUF based-security chip that performs authentication and cryptography operations.<br>
+It is suited for performing secure authentication, protecting firmware , preventing counterfeiting and storing secure data.<br>
+This guide will provide writing certificates and keys to G3 via ZWG3M board so that the customer can write their personal certificate to connect AWS IoT. </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.13in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="Segoe UI, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Certificate
+Requirements </B></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+ <FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt">Cryptographic
+algorithm: ECC(ECDSA and ECDH) with secp256r1(NIST P256)</FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="굴림, serif"><FONT SIZE=3><FONT FACE="Segoe UI, serif"><FONT SIZE=2>ECC
+	curve name : prime256v1 </FONT></FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="굴림, serif"><FONT SIZE=3><FONT FACE="Segoe UI, serif"><FONT SIZE=2>Private
+	key file extension : *.key</FONT></FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="굴림, serif"><FONT SIZE=3><FONT FACE="Segoe UI, serif"><FONT SIZE=2>Certificate
+	file extension : *.crt</FONT></FONT></FONT></FONT></P>
+</UL>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.13in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt">Please
+have the ECC certificates ready for provisioning. Use this link </FONT></FONT><FONT COLOR="#4472c4"><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><A HREF=openssl_guide.html>
+<U>openssl guide</U></FONT></FONT></FONT></a><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt"> 
+to create one if needed. </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.13in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#1e1e3c"><FONT FACE="Segoe UI, serif"><FONT SIZE=4 STYLE="font-size: 13pt"><B>Write
+your certificate to ZWG3M:</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.11in; widows: 2; orphans: 2"><FONT COLOR="#212529"><FONT FACE="Segoe UI, serif"><SPAN STYLE="background: #ffffff">G3
+password will be set differently with client’s request. Unless
+defined, it is set to default value : 11223344 . Please contact
+puf@ictk.com for detail information.</SPAN></FONT></FONT></P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#212529"><FONT FACE="Segoe UI, serif">Please locate
+	your certification files in </FONT></FONT><A HREF="https://github.com/ictk-solution-dev/zwg3m-py"><FONT FACE="Segoe UI, serif">zwg3m-py
+	folder</FONT></A><FONT COLOR="#212529"><FONT FACE="Segoe UI, serif">.
+	</FONT></FONT>
+	</P>
+</OL>
+<P STYLE="margin-left: 0.81in; margin-bottom: 0.17in; background: #ffffff; line-height: 0.17in">
+<FONT COLOR="#24292e">•  <FONT FACE="Segoe UI, serif">A client
+certificate (*.crt) </FONT></FONT>
+</P>
+<P STYLE="margin-left: 0.81in; margin-bottom: 0.17in; background: #ffffff; line-height: 0.17in">
+<FONT COLOR="#24292e">•  <FONT FACE="Segoe UI, serif">A client
+private key ( *.key) </FONT></FONT>
+</P>
+<OL START=2>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#212529"><FONT FACE="Segoe UI, serif">G3 supports ECC
+	but not RSA . please use ECC 256 bit key for Amazon Trust Services
+	Endpoints. </FONT></FONT>
+	</P>
+</OL>
+<P STYLE="margin-left: 0.81in; margin-bottom: 0.17in; background: #ffffff; line-height: 0.17in">
+<FONT COLOR="#24292e">•  </FONT><FONT COLOR="#212529"><FONT FACE="Segoe UI, serif">RootCA
+:&nbsp;</FONT></FONT><A HREF="https://www.amazontrust.com/repository/AmazonRootCA3.pem"><FONT COLOR="#007bff"><FONT FACE="Segoe UI, serif"><SPAN STYLE="text-decoration: none">AmazonRootCA
+certificate</SPAN></FONT></FONT></A></P>
+<OL START=3>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#212529"><FONT FACE="Segoe UI, serif">Please modify the
+	certi.json file accordingly.<BR><BR>AWS ROOT CA : amazon root
+	certificate<BR>USER KEY : your own private key<BR>USER CERT : your
+	certificate<BR>G3 PASSWORD : password provided from vendor</FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-top: 0.19in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#212529"><FONT FACE="Segoe UI, serif"><BR>certi.json<BR><IMG SRC="img/zwg3m-Certificate/img1.png" NAME="그림 5" ALIGN=BOTTOM WIDTH=383 HEIGHT=118 BORDER=0></FONT></FONT></P>
+<OL START=4>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#212529"><FONT FACE="Segoe UI, serif">Run script :
+	zwg3m_certi.py</FONT></FONT></P>
+</OL>
+<P STYLE="margin-left: 0.5in; margin-top: 0.19in; margin-bottom: 0.17in; background: #ffffff">
+<FONT COLOR="#212529"><FONT FACE="Segoe UI, serif">Available port
+will be shown in windows. Once user selects the port for the ZWG3M,
+it will be stored in json file name 'zwg3m.json'</FONT></FONT></P>
+<OL START=5>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#212529"><FONT FACE="Segoe UI, serif">Writing process<BR><BR></FONT></FONT><BR><BR>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="굴림, serif"><FONT SIZE=3><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=2>*please
+disable Wi-Fi connection prior to below process. Any interruption may
+cause false input to G3 device.</FONT></FONT></FONT></FONT></FONT></P>
+<P STYLE="margin-left: 0.5in; margin-top: 0.19in; margin-bottom: 0.17in; background: #ffffff">
+<IMG SRC="img/zwg3m-Certificate/img2.png" NAME="그림 4" ALIGN=BOTTOM WIDTH=602 HEIGHT=643 BORDER=0></P>
+<P STYLE="margin-left: 0.08in; margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff">
+<FONT COLOR="#212529"><FONT FACE="Segoe UI, serif">Writing process
+may take up to minutes and will be shown as above. Please reset the
+ZWG3M board after the process.</FONT></FONT></P>
+</BODY>
+</HTML>
