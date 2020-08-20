@@ -64,9 +64,9 @@ your IAM user account access to AWS IoT and FreeRTOS, attach the
 following IAM policies to your IAM user account:</FONT></FONT></FONT></P>
 <UL>
 	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-	<FONT COLOR="#24292e"><FONT FACE="Consolas, serif">AmazonFreeRTOSFullAccess</FONT></FONT></P>
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">AmazonFreeRTOSFullAccess</FONT></FONT></P>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-	<FONT COLOR="#24292e"><FONT FACE="Consolas, serif">AWSIoTFullAccess</FONT></FONT></P>
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">AWSIoTFullAccess</FONT></FONT></P>
 </UL>
 <P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>To
@@ -97,7 +97,7 @@ attach the AmazonFreeRTOSFullAccess policy to your IAM user</FONT></FONT></FONT>
 	existing policies directly</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>In
-	the search box, enter&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Consolas, serif">AmazonFreeRTOSFullAccess</FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>,
+	the search box, enter&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Seogoe UI, serif">AmazonFreeRTOSFullAccess</FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>,
 	choose it from the list, and then choose&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Next:
 	Review</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
 </OL>
@@ -280,9 +280,7 @@ enhanced secured working structure.</FONT></FONT>
 </P>
 <P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#ff0000">* </FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif">ZWG3M
-provides TRNG(True Random Number Generator) for best security. True
-random number generator (TRNG) generates instant random values using
-FIGARO True number generators. When the MCU performs TRNG Read
+provides TRNG(True Random Number Generator) for best security. When the MCU performs TRNG Read
 through I/O ports, it reads 32-bit value.</FONT></FONT></P>
 <P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <BR><BR>
@@ -397,67 +395,183 @@ Register your certificate, refer to </FONT></FONT></FONT>
 </OL>
 <P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>For
-sample policies, refer to</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Arial, serif"><FONT SIZE=3>
-</FONT></FONT></FONT><A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/example-iot-policies.html"><FONT FACE="Arial, serif"><FONT SIZE=3>https://docs.aws.amazon.com/iot/latest/developerguide/example-iot-policies.html</FONT></FONT></A><FONT COLOR="#000000"><FONT FACE="Arial, serif"><FONT SIZE=3>.
+sample policies, refer to</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+</FONT></FONT></FONT><A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/example-iot-policies.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>https://docs.aws.amazon.com/iot/latest/developerguide/example-iot-policies.html</FONT></FONT></A><FONT COLOR="#000000"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.
 </FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Also
 refer to</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Arial, serif"><FONT SIZE=3>
-</FONT></FONT></FONT><A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/security-best-practices.html"><FONT FACE="Arial, serif"><FONT SIZE=3>https://docs.aws.amazon.com/iot/latest/developerguide/security-best-practices.html</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.
+</FONT></FONT></FONT><A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/security-best-practices.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>https://docs.aws.amazon.com/iot/latest/developerguide/security-best-practices.html</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.
 </FONT></FONT></FONT>
 </P>
+
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img12.png" NAME="그림 18" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>&lt;
 policy statements&gt; </FONT></FONT></FONT>
 </P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">{</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e">  <FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">&quot;Version&quot;:
-&quot;2012-10-17&quot;,</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e">  <FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">&quot;Statement&quot;:
-[</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e">    <FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">{</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e">      <FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">&quot;Effect&quot;:
-&quot;Allow&quot;,</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e">      <FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">&quot;Action&quot;:
-&quot;iot:Connect&quot;,</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e">      <FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">&quot;Resource&quot;:
-&quot;arn:aws:iot:XXXXX:client/${iot:Connection.Thing.ThingName}&quot;</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e">    <FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">},</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e">    <FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">{</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e">      <FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">&quot;Effect&quot;:
-&quot;Allow&quot;,</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e">      <FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">&quot;Action&quot;:
-[</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.8in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">&quot;iot:Subscribe&quot;,</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.5in; text-indent: 0.31in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">&quot;iot:Receive&quot;,</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.5in; text-indent: 0.31in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">&quot;iot:Publish&quot;</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e">      <FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">&quot;Resource&quot;:
- “*”</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e">    <FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">}</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e">  <FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">]</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=1 STYLE="font-size: 8pt">}</FONT></FONT></FONT></P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
-<BR>
-</P>
-<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0in; background: #ffffff; line-height: 0.17in; widows: 2; orphans: 2">
+
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'>{<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;
+</span>&quot;Version&quot;: &quot;2012-10-17&quot;,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;
+</span>&quot;Statement&quot;: [<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Effect&quot;: &quot;Allow&quot;,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Action&quot;: &quot;iot:Connect&quot;,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Resource&quot;:
+&quot;arn:aws:iot:XXXXX:client/${iot:Connection.Thing.ThingName}&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>},<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Effect&quot;: &quot;Allow&quot;,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Action&quot;: [<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:57.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'>&quot;iot:Subscribe&quot;,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:35.7pt;margin-bottom:.0001pt;text-align:left;
+text-indent:22.15pt;line-height:12.0pt;mso-pagination:widow-orphan;background:
+white;text-autospace:ideograph-numeric ideograph-other;word-break:keep-all'><span
+lang=EN-US style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'>&quot;iot:Receive&quot;,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:35.7pt;margin-bottom:.0001pt;text-align:left;
+text-indent:22.15pt;line-height:12.0pt;mso-pagination:widow-orphan;background:
+white;text-autospace:ideograph-numeric ideograph-other;word-break:keep-all'><span
+lang=EN-US style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'>&quot;iot:Publish&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Resource&quot;: <span style='mso-spacerun:yes'>&nbsp;</span>“*”<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;
+</span>]<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+
 <BR>
 </P>
 <OL START=10>
@@ -502,18 +616,18 @@ device. Use port num as 8883 for secure-MQTT protocol. </FONT></FONT></FONT>
 </P>
 <P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>User
-can find </FONT></FONT></FONT><FONT FACE="Space Mono, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>aws_host_url</I></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+can find </FONT></FONT></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>aws_host_url</I></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
 from the </FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B><A HREF="https://aws.amazon.com/console/">AWS
 Management Console</A>.</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
 Go to IoT core and click the settings at the left pane. Please make a
-copy of the Endpoint and use them as </FONT></FONT></FONT><FONT FACE="Space Mono, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>aws_host_url</I></FONT></FONT><FONT FACE="Space Mono, serif"><FONT SIZE=2 STYLE="font-size: 9pt"><I>.</I></FONT></FONT></P>
+copy of the Endpoint and use them as </FONT></FONT></FONT><FONT FACE="Segoe UI , serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>aws_host_url</I></FONT></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 9pt"><I>.</I></FONT></FONT></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img14.png" NAME="그림 13" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.78in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <BR><BR>
 </P>
 <P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<FONT FACE="Space Mono, serif"><FONT SIZE=2 STYLE="font-size: 10pt">wifi.json
+<FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 10pt">wifi.json
 </FONT></FONT>
 </P>
 <P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
@@ -522,7 +636,7 @@ copy of the Endpoint and use them as </FONT></FONT></FONT><FONT FACE="Space Mono
 <P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img15.png" NAME="shape1026" ALIGN=BOTTOM WIDTH=342 HEIGHT=171 BORDER=0></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
-<FONT FACE="Space Mono, serif"><FONT SIZE=2 STYLE="font-size: 10pt">aws.json</FONT></FONT></P>
+<FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 10pt">aws.json</FONT></FONT></P>
 <P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 <IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img16.png" NAME="shape1027" ALIGN=BOTTOM WIDTH=348 HEIGHT=106 BORDER=0></P>
 <OL START=4>
@@ -583,9 +697,9 @@ subscribe to the MQTT topic with the AWS IoT MQTT client </FONT></FONT></FONT>
 	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
 	<FONT SIZE=2 STYLE="font-size: 11pt">In </FONT><FONT SIZE=2 STYLE="font-size: 11pt"><B>Subscription
 	topic </B></FONT><FONT SIZE=2 STYLE="font-size: 11pt">enter
-	</FONT><FONT SIZE=2 STYLE="font-size: 11pt"><B>iotdemo/topic/#</B></FONT><FONT FACE="Arial, serif"><FONT SIZE=2 STYLE="font-size: 11pt">,
-	</FONT></FONT><FONT SIZE=2 STYLE="font-size: 11pt">select </FONT><FONT FACE="Arial, serif"><FONT SIZE=2 STYLE="font-size: 11pt">&quot;</FONT></FONT><FONT SIZE=2 STYLE="font-size: 11pt"><B>Display
-	Payloads as Strings</B></FONT><FONT FACE="Arial, serif"><FONT SIZE=2 STYLE="font-size: 11pt">&quot;
+	</FONT><FONT SIZE=2 STYLE="font-size: 11pt"><B>iotdemo/topic/#</B></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt">,
+	</FONT></FONT><FONT SIZE=2 STYLE="font-size: 11pt">select </FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt">&quot;</FONT></FONT><FONT SIZE=2 STYLE="font-size: 11pt"><B>Display
+	Payloads as Strings</B></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt">&quot;
 	</FONT></FONT><FONT SIZE=2 STYLE="font-size: 11pt">and then click
 	</FONT><FONT SIZE=2 STYLE="font-size: 11pt"><B>Subscribe to topic</B></FONT><FONT SIZE=2 STYLE="font-size: 11pt">.
 	A ‘#’ symbol at the end of a topic name acts as wildcard. i.e. </FONT>
