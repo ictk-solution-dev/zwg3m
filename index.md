@@ -7,7 +7,7 @@
 
 ### ZWG3M  datasheet : [Datasheet](/files/ZWG3M-Datasheet-v1.0.pdf)
 
-### ZWG3M  AT command : [Command set](/files/ZWG3M-ATcommand-v1.0.pdf)
+### ZWG3M  AT command : [Command set](/files/ZWG3M-ATcommand-v1.1.pdf)
 
 ### ZWG3M Getting started : [Getting started](/zwg3m-GettingStarted.html)
 
