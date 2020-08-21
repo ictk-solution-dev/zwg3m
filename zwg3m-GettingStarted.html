@@ -1,213 +1,1008 @@
-<!doctype html>
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
+	<META NAME="CREATED" CONTENT="20200818;23400000000000">
+	<META NAME="CHANGED" CONTENT="20200820;65100000000000">
+	<META NAME="AppVersion" CONTENT="16.0000">
+	<META NAME="DocSecurity" CONTENT="0">
+	<META NAME="HyperlinksChanged" CONTENT="false">
+	<META NAME="LinksUpToDate" CONTENT="false">
+	<META NAME="ScaleCrop" CONTENT="false">
+	<META NAME="ShareDoc" CONTENT="false">
+	<META NAME="version" CONTENT="0900.0001.01">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 1in; margin-right: 1in; margin-top: 1.18in; margin-bottom: 1in }
+		P { margin-bottom: 0.08in; direction: ltr; widows: 0; orphans: 0 }
+		A:link { color: #0000ff; so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" LINK="#0000ff" DIR="LTR">
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.13in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#1e1e3c"><FONT FACE="Segoe UI, serif"><FONT SIZE=6><B>Getting
+Started with ZWG3M</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.13in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#1e1e3c"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Getting
+Started with AWS IoT</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 10pt">This
+integration enables you to build AWS IoT management system based on
+H/W root of trust for enhanced security: interact with Internet of
+Things, collect and process telemetry from devices or control devices
+remotely while protecting sensitive information in hardware format.
+Uplink and downlink messages are available on AWS IOT MQTT, allowing
+you to leverage Amazon services such as storing messages in DynamoDB
+, invoke Lambda functions and many more.  </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Set
+Up the ZWG3M Hardware</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Connect
+your host computer to ZWG3M</FONT></FONT></FONT></P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Connect
+	the J1 UART connector using FT232 USB UART </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Connect
+	J6 using USB UART to send and receive AT command messages during
+	operation.  </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Ensure
+	the UART_DL(JP3) is set to low and JP1 = H_BOOT for download mode. </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img1.png" NAME="그림 4" ALIGN=BOTTOM WIDTH=501 HEIGHT=332 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Set
+Up Your Development Environment</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>To
+communicate with your board, you need to download and install a
+firmware and configure board with AT command</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=4 STYLE="font-size: 15pt"><B>Download
+and install Flash tool (MTK lab) and firmware </B></FONT></FONT></FONT>
+</P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>To
+	set up your environment, please download </FONT></FONT></FONT><A HREF="https://docs.labs.mediatek.com/resource/mt2523/en/downloads"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>IoT
+	Flashtool for MT7686</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.
+	Install them on your host computer.</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Download
+	the </FONT></FONT></FONT><A HREF="https://ictk-solution-dev.github.io/zwg3m/Firmware-release.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>latest
+	firmware along with build application</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	for your convenience. Re-locate or copy these four files in the IoT
+	Flashtool folder you downloaded above.  </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.44in; text-indent: 0.56in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">zwg3m_flash.bat</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.44in; text-indent: 0.56in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">Flash_download.cfg</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.44in; text-indent: 0.56in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">zwg3m.bin </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">mt768X_default_PerRate_TxPwr.bin</FONT></FONT></P>
+<OL START=3>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Modify
+	zwg3m_flash.bat and flash_donwload.cfg with the correct path.</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; text-indent: 0.31in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e">•  <FONT FACE="Segoe UI, serif"><FONT SIZE=3>zwg3m_flash.bat
+</FONT></FONT></FONT>
+</P>
+<OL>
+	<OL>
+		<UL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff">
+			<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>set
+			comport=COMXX</FONT></FONT></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff">
+			<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>set
+			pathexe=XXXXXX</FONT></FONT></FONT><FONT FACE="Segoe UI, serif">
+			</FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>\IoT_Flash_Tool_Windows\coda.exe</FONT></FONT></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff">
+			<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>set
+			param1=XXXX \IoT_Flash_Tool_Windows\flash_download.cfg --UART
+			%comport% -f -d --reset</FONT></FONT></FONT></P>
+		</UL>
+	</OL>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; text-indent: 0.31in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e">•  <FONT FACE="Segoe UI, serif"><FONT SIZE=3>flash_download.cfg
+</FONT></FONT></FONT>
+</P>
+<OL>
+	<OL>
+		<UL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff">
+			<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Set
+			the correct path for zwg3m.bin and
+			mt768x_default_PerRate_TxPwr.bin </FONT></FONT></FONT>
+			</P>
+		</UL>
+	</OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Run
+	zwg3m_flash.bat </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>When
+	you see the message below, </FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>press
+	the reset button</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	for download firmware. </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img2.png" NAME="그림 21" ALIGN=BOTTOM WIDTH=549 HEIGHT=287 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img3.png" NAME="그림 3" ALIGN=BOTTOM WIDTH=268 HEIGHT=254 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Connect
+to AWS IoT Core with MQTT and TLS </B></FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.11in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif">* Implementation
+is based on MQTT version 3.1.1 and TLS 1.2 with
+ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 ciphersuite.<BR>* private key and
+certificates are encrypted in HW-based security chip, supports
+enhanced secured working structure.</FONT></FONT><FONT FACE="Segoe UI, serif">
+</FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.11in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif">* ZWG3M provides
+TRNG (True Random Number Generator) for best security. When the MCU
+performs TRNG Read through I/O ports, it reads 32-bit value.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.11in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Prerequisites
+</B></FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1in; text-indent: 0.11in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e">•  <FONT FACE="Segoe UI, serif"><FONT SIZE=3>CA
+certificate </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1in; text-indent: 0.11in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e">•  <FONT FACE="Segoe UI, serif"><FONT SIZE=3>A
+client certificate </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1in; text-indent: 0.11in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e">•  <FONT FACE="Segoe UI, serif"><FONT SIZE=3>A
+client private key </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="굴림, serif"><FONT SIZE=3><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">ZWG3M
+support ECC but not RSA. Please prepare your own ECC certificate and
+key to connect AWS IoT. Please use this guide to create your own ECC
+certificates : </FONT></FONT><A HREF="https://ictk-solution-dev.github.io/zwg3m/openssl_guide.html"><FONT FACE="Segoe UI, serif">Create
+ECC certificate guide</FONT></A></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=4 STYLE="font-size: 15pt"><B>Connect
+to AWS IoT Core </B></FONT></FONT></FONT>
+</P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Log
+	in to the&nbsp;</FONT></FONT></FONT><A HREF="https://aws.amazon.com/console/"><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>AWS
+	Management Console</B></FONT></FONT></FONT></A></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Choose
+		<IMG SRC="img/zwg3m-GettingStarted/img22.png" NAME="그림 8" ALIGN=BOTTOM WIDTH=13 HEIGHT=13 BORDER=0></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>
+	IoT Core service</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	 </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>In
+	the left navigation pane, click on&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Manage/Things</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	</FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img7.png" NAME="그림 7" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=4>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Click
+	on create button and give your device a name and press create</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img8.png" NAME="그림 6" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=5>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>On
+	the Certificate page, choose </FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Use
+	my certificate</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img9.png" NAME="그림 5" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=6>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Select
+	or register CA</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	for your own certificate to register </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>For
+CA register, refer to </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/register-CA-cert.html"><FONT FACE="Segoe UI, serif">https://docs.aws.amazon.com/iot/latest/developerguide/register-CA-cert.html</FONT></A></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img10.png" NAME="graphics1" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=7>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Upload
+	your own certificate </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>To
+Register your certificate, refer to </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/manual-cert-registration.html"><FONT FACE="Segoe UI, serif">https://docs.aws.amazon.com/iot/latest/developerguide/manual-cert-registration.html</FONT></A></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img11.png" NAME="graphics2" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=8>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>In
+	the left navigation pane, choose </FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Policies</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	under Secure menu</FONT></FONT></FONT></P>
+</OL>	
+<OL START=9>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Click
+	on the Create button and define a policy. The specific permission
+	policies can vary for your use cases. For non-dev environments, all
+	devices in your fleet must have credentials with privileges that
+	authorize intended actions only, which include (but not limited to)
+	AWS IoT MQTT actions such as publishing messages or subscribing to
+	topics with specific scope and context. Identify the permission
+	policies that best meet your business and security requirements. </FONT></FONT></FONT>
+	</P>
+</OL>	
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>For
+sample policies, refer to</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+</FONT></FONT></FONT><A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/example-iot-policies.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>https://docs.aws.amazon.com/iot/latest/developerguide/example-iot-policies.html</FONT></FONT></A><FONT COLOR="#000000"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.
+</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Also
+refer to</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+</FONT></FONT></FONT><A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/security-best-practices.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>https://docs.aws.amazon.com/iot/latest/developerguide/security-best-practices.html</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.
+</FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img5.png" NAME="그림 2" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
 
-<head>
-    <title>Getting Started with ZWG3M</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="zw.css" />
-</head>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:18.0pt;text-align:left;line-height:normal;
+mso-pagination:widow-orphan;background:white;text-autospace:ideograph-other;
+word-break:keep-all'><span lang=EN-US style='mso-bidi-font-size:10.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'>&lt; policy statements&gt; <o:p></o:p></span></p>
 
-<body class="box-body">
-    <div class="cts">
-        <h1>Getting Started with ZWG3M</h1>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'>{<o:p></o:p></span></p>
 
-        <h3>Getting Started with AWS IoT</h3>
-        <div class="rect-block">
-            <div class="rect-body">
-                <p>This integration enables you to build AWS IoT management system based on H/W root of trust for
-                    enhanced
-                    security: interact with Internet of Things, collect and process telemetry from devices or control
-                    devices remotely while protecting sensitive
-                    information in hardware format. Uplink and downlink messages are available on AWS IOT MQTT, allowing
-                    you
-                    to leverage Amazon services such as storing messages in DynamoDB , invoke Lambda functions and many
-                    more. </p>
-            </div>
-        </div>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;
+</span>&quot;Version&quot;: &quot;2012-10-17&quot;,<o:p></o:p></span></p>
 
-        <div class="rect-block">
-            <div class="rect-label">Connect to AWS IoT Core with MQTT and TLS</div><br>
-            <div class="rect-body">
-                <p style="color:red;">* Implemeataion is based on MQTT version 3.1.1 and TLS 1.2 with
-                    ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 ciphersuite.<br>
-                    * private key and certificates are encrptyed in HW-based security chip, supports enhacned
-                    secured working structure.</p>
-                <ol>
-                    <li>Log in to the AWS Management Console <a href="https://aws.amazon.com/console/">AWS Management
-                            Console</a><br><br>
-                    <li>Choose <img class="innerpic" src="img/image001.png" />IoT Core
-                        service<br><br>
-                    <li> In the left navigation panel, click on Manage/Things<br><br>
-                        <img class="innerpic" src="img/aws-1.png" width="110%" , height="110%" /><br><br>
-                    <li>Click on create button and add your device to the thing registery<br><br>
-                    <li>On the Certificate page, choose Use my certificate.<br><br>
-                        <img class="innerpic" src="img/aws-2.png" width="110%" , height="110%" /><br><br>
-                    <li>Select or register CA for your own certificate to register<br><br>
-                    <li>Upload a device certificate : the one installed in ZWG3M<br><br>
-                        <img class="innerpic" src="img/aws-3.png" width="110%" , height="110%" /><br><br>
-                    <li>Choose Polices under Secure menu<br><br>
-                    <li>Click on the create button and defines a set of policy actions<br><br>
-                        <img class="innerpic" src="img/aws-4.png" width="110%" , height="110%" /><br><br>                        
-                        Users can define their own policy (ex. control clients or limit messages) by attach policies to
-                        Thing certificate.<br><br>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;
+</span>&quot;Statement&quot;: [<o:p></o:p></span></p>
 
-                        Below shows policy commands which grants permission for a device to connect using its thing name as
-                        the client ID. The device must be registered with AWS IoT or the connection would not work.<br><br>
-                        <img class="innerpic" src="img/image005.png" /><br><br>
-                    <li>Go to the certificates page, click on the three dots of your certificate and attach the
-                        selected policies to the thing certificate<br><br>
-                        <img class="innerpic" src="img/aws-5.png" width="110%" , height="110%" /><br><br>
-                </ol>
-            </div>
-        </div>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>{<o:p></o:p></span></p>
 
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Effect&quot;: &quot;Allow&quot;,<o:p></o:p></span></p>
 
-        <div class="rect-block">
-            <div class="rect-label">Setting up the device (ZWG3M device):</div><br>
-            <div class="rect-body">
-                <ol>
-                    <li>Download test example script from the <a
-                            href="https://github.com/ictkholdings/zwg3m/tree/master/py">ICTK GitHub Repository</a>
-                    <li>ZWG3M contains amazon root CA, client certificate and private key already installed in PUF
-                        chip. The basic certificate is installed, but can be renewed or added upon request.
-                    <li>Run test script after connecting power and UART to ZWG3M module.(Please see the ZWG3M datasheet)
-                </ol>
-            </div>
-        </div>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Action&quot;: &quot;iot:Connect&quot;,<o:p></o:p></span></p>
 
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Resource&quot;:
+&quot;arn:aws:iot:XXXXX:client/${iot:Connection.Thing.ThingName}&quot;<o:p></o:p></span></p>
 
-        <div class="rect-block">
-            <div class="rect-label">Configuration :</div><br>
-            <div class="rect-body">
-                This AT Commands allows users to set Wi-Fi information and application specific settings in order to
-                connect with the AWS IoT message broker.<br>
-                <br>• Wi-Fi configuration command<br><br>
-                <div>
-                    <i>AT+WIFI_SSID_STA=wifi_SSID</i><br>
-                    <i>AT+ WIFI_PW_STA=wifi _PW</i><br>
-                </div>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>},<o:p></o:p></span></p>
 
-                <br>• AWS configuration command<br><br>
-                <div>
-                    <i>AT+AWS_EP=aws_host_url</i><br>
-                    <i>AT+AWS_PN=port_number</i><br>
-                    <i>AT+AWS_TN=thing name</i><br>
-                    <i>AT+AWS_CID=cleintID</i><br>
-                </div>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>{<o:p></o:p></span></p>
 
-                <br>Or user can download below python code to configure the device. Please modify <a
-                    href="py/wifi.json">wifi.json</a> and <a href="py/aws.json">aws.json</a>
-                files accroding to your settings.<br><br>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Effect&quot;: &quot;Allow&quot;,<o:p></o:p></span></p>
 
-                <a href="py/zwg3m_configuration.py">zwg3m_configuration.py</a><br><br>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Action&quot;: &quot;iot:Subscribe&quot;,<o:p></o:p></span></p>
 
-                <a href="py/wifi.json">wifi.json</a><br><br>
-                <img class="innerpic" src="img/image002.png" /><br><br>
-                <a href="py/aws.json">aws.json</a><br><br>
-                <img class="innerpic" src="img/image003.png" /><br><br>
-                Run ZWG3M_Configuration<br><br>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Resource&quot;: [<o:p></o:p></span></p>
 
-                Available port will be shown in windows. Once user selects the port for the ZWG3M, it will be stored
-                in json file name '<a href="py/zwg3m.json">zwg3m.json</a>'.<br><br>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;arn:aws:iot:
+XXXXX:topicfilter/$aws/things/${iot:Connection.Thing.ThingName}/shadow/*&quot;,<o:p></o:p></span></p>
 
-                Configuration process<br><br>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;arn:aws:iot:
+XXXXX:topicfilter/${iot:Connection.Thing.ThingName}/*&quot;<o:p></o:p></span></p>
 
-                <img class="innerpic" src="img/image004.png" /><br><br>
-                Users Wi-Fi and AWS settings that was written on json file will be configured. Please reset the ZWG3M
-                after the
-                configuration by pressing the reset button on the evaluation board.<br><br>
-                <img class="innerpic" src="img/zwk1-1.png" width="100%" , height="100%" /><br><br>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>]<o:p></o:p></span></p>
 
-            </div>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>},<o:p></o:p></span></p>
 
-        </div>
-    </div>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>{<o:p></o:p></span></p>
 
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Effect&quot;: &quot;Allow&quot;,<o:p></o:p></span></p>
 
-    <div class="rect-block">
-        <div class="rect-label">MQTT Test : Subscibe / Publish</div><br>
-        <div class="rect-body">
-            ZWG3M can subscribes and publish messages to user specific topics using AT command.<br><br>
-            <div>
-                <i>AT+AWS_PUB=your_topic_here,QoS,Payload</i><br>
-                <i>AT+AWS_SUB=your_topic_here,QoS </i></div>
-            <div class="rect-body">
-                <br>Using AWS IoT device shadow, users can update or get information using sub/pub command
-                below.<br><br>
-                Out board currently support up to 3 topics to subscribe<br><br>
-            </div>
-            <div>
-                <i>AT+AWS_PUB=$aws/things/yourthingname/shadow/update,0,{ your input in json format }</i><br>
-                <i>AT+AWS_SUB=$aws/things/yourthingname/shadow/update,0</i><br>
-            </div>
-            <br>To publish or subscrice with python, please modify below json file with your topic, QoS and
-            payload.<br><br>
-            Publish updates to AWS IoT Device Shadow : <a href="py/pub.json">pub.json</a><br><br>
-            <img class="innerpic" src="img/image006.png" /><br><br>
-            <img class="innerpic" src="img/image007.png" /><br><br>
-            After run publish script as above, updated shadow states as in pub.json will be shown in thing
-            shadow in
-            amazon console.<br><br>
-            <img class="innerpic" src="img/aws-6b.png" width="110%" , height="110%" /><br><br>
-            Subscription to the AWS IoT Device Shadow : <a href="py/sub.json">sub.json</a><br><br>
-            <img class="innerpic" src="img/image008.png" /><br><br>
-            After modifying the topic in sub.json, run <a href="py/zwg3m_subscribe.py">zwg3m_subscribe.py</a><br><br>
-            <img class="innerpic" src="img/aws-7.png" width="110%" , height="110%" /><br><br>
-            By publish MQTT messages using amazon console, topic and payload will be shown in python shell as
-            below.<br><br>
-            <img class="innerpic" src="img/image009.png" /><br><br>
-        </div>
-    </div>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Action&quot;: &quot;iot:Receive&quot;,<o:p></o:p></span></p>
 
-    <div class="rect-block">
-        <div class="rect-label">Device Shadow : Update /Delta</div><br>
-        <div class="rect-body">
-            ZWG3M publishes updates to the AWS IoT Device Shadow using both AT command and python code
-            provided.<br><br>
-            <div>
-                <i>AT+AWS_UPDATE=act,key,type,value</i><br><br>
-            </div>
-            With configured data( clinetID , Endpoint etc) , above command will update item with desired
-            values.<br><br>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='mso-spacerun:yes'>&nbsp;</span>&quot;Resource&quot;: [<o:p></o:p></span></p>
 
-            To update with python code, please modify update.json file with your input : <a
-                href="py/update.json">update.json</a><br><br>
-            <img class="innerpic" src="img/img011.png" /><br><br>
-            Below python shell shows successful execution of shadow updates. You can also observe updated shadow
-            values on your AWS console.<br><br>
-            <img class="innerpic" src="img/img012.png" /><br><br>
-            <img class="innerpic" src="img/img013.png" width="110%" , height="110%" /><br><br>
-            Delta in shadow is useful indicator which contains difference between the desired and reported states.
-            This will not show on shadow if desired and reported states are the same or there is no desired part in
-            Thing shadow. Below AT command will report delta states of the item when it triggers with delta.<br><br>
-            <div>
-                <i>AT+AWS_DELTA=key,type</i><br><br>
-            </div>
-            Below is the example of running the delta function in python. Please modify 'update.json' file with your key and type before running delta function.
-            It will return item with desired states. <br><br>
-            <img class="innerpic" src="img/img014.png" width="110%" , height="110%" /><br><br>
-            <img class="innerpic" src="img/img015.png" /><br><br>
-        </div>
-    </div>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;arn:aws:iot:
+XXXXX:topic/$aws/things/${iot:Connection.Thing.ThingName}/shadow/*&quot;,<o:p></o:p></span></p>
 
-    <br><br>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;arn:aws:iot: XXXXX:topic/${iot:Connection.Thing.ThingName}/*&quot;<o:p></o:p></span></p>
 
-    <div class="rect-block">
-        <div class="rect-label">TPM/SE security : G3 PUF IC</div><br>
-        <div class="rect-body">
-            <a href="TrustFi-security.html">TrustFi-security</a><br><br>
-        </div>
-    </div>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>]<o:p></o:p></span></p>
 
-    <br><br>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>},<o:p></o:p></span></p>
 
-    <div class="rect-block">
-        The firmware binaries for ZWG3M module can be found <a href="https://ictkholdings.github.io/zwg3m/">on
-            GitHub</a>.<br>
-    </div>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>{<o:p></o:p></span></p>
 
-    </div>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Effect&quot;: &quot;Allow&quot;,<o:p></o:p></span></p>
 
-</body>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Action&quot;: &quot;iot:Publish&quot;,<o:p></o:p></span></p>
 
-</html>
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span>&quot;Resource&quot;: [<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;arn:aws:iot:
+XXXXX:topic/$aws/things/${iot:Connection.Thing.ThingName}/shadow/*&quot;,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;arn:aws:iot: XXXXX:topic/${iot:Connection.Thing.ThingName}/*&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>]<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;
+</span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp; </span>]<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:9.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-other;word-break:keep-all'><span lang=EN-US style='font-size:8.0pt;
+font-family:"Segoe UI",sans-serif;mso-fareast-font-family:굴림;color:#24292E;
+mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+<OL START=10>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"> <FONT FACE="Segoe UI, serif"><FONT SIZE=3>Go
+	to the certificates page, click on the three dots of your
+	certificate and attach the policy to the certificate </FONT></FONT></FONT>
+	</P>
+</OL>
+<p><BR></p>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.13in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img18.png" NAME="그림 1" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=4 STYLE="font-size: 15pt"><B>Setting
+up the ZWG3M device </B></FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>This
+Python scripts allow users to set Wi-Fi information and application
+specific settings in order to connect the board with the AWS IoT. </FONT></FONT></FONT>
+</P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2"><A NAME="_Hlk48218916"></A>
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>Do</FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>wnload
+	all python scripts from </FONT></FONT></FONT><A HREF="https://github.com/ictk-solution-dev/zwg3m-py"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>the
+	ICTK GitHub repository</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	to a zwg3m-py folder. </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Use
+	this guide to provision the certificate to ZWG3M: </FONT></FONT></FONT><A HREF="https://ictk-solution-dev.github.io/zwg3m/zwg3m-Certificate.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>getting
+	started-provisioning certificate guide</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	</FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Modify
+	wifi.json and aws.json files according to your settings.</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Please
+have your host URL, thing name and client ID ready to configure your
+device. Use port num as 8883 for secure-MQTT protocol. </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>User
+can find </FONT></FONT></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=3>aws_host_url</FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+from the </FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B><A HREF="https://aws.amazon.com/console/">AWS
+Management Console</A>.</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+Go to IoT core and click the settings at the left pane. Please make a
+copy of the Endpoint and use them as </FONT></FONT></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=3>aws_host_url.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img13.png" NAME="그림 12" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.78in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 10pt">wifi.json
+</FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img15.png" NAME="그림 11" ALIGN=BOTTOM WIDTH=342 HEIGHT=171 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 10pt">aws.json</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img16.png" NAME="그림 10" ALIGN=BOTTOM WIDTH=348 HEIGHT=106 BORDER=0></P>
+<OL START=4>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Run
+	zwg3m_configuration.py to configure settings of your device.  </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Available
+port will be shown in windows. Once user selects the port for the
+ZWG3M, it will be stored in json file name 'zwg3m.json’.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.28in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>configuration
+process </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.28in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img17.png" NAME="그림 9" ALIGN=BOTTOM WIDTH=531 HEIGHT=240 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.39in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Wi-Fi
+and AWS setting that was written on json files will be configured.
+Please reset the board after the configuration.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=4 STYLE="font-size: 15pt"><B>MQTT
+Test: Publish/Subscribe </B></FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>ZWG3M
+can publish and subscribe messages to user specific topics using
+python scripts: zwg3m_publish.py , zwg3m_subscribe.py. </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="text-indent: 0.08in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Publish
+Messages </B></FONT></FONT></FONT>
+</P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>Modify pub.json with your
+	topic, QoS and payload</FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="Segoe UI, serif"><FONT SIZE=3>pub.json </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img24.png" NAME="그림 17" ALIGN=BOTTOM WIDTH=402 HEIGHT=84 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="Segoe UI, serif"><FONT SIZE=3>For topics, refer to </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/topics.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>https://docs.aws.amazon.com/iot/latest/developerguide/topics.html</FONT></FONT></A></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="Segoe UI, serif"><FONT SIZE=3>QoS (Quality of Service):</FONT></FONT><FONT COLOR="#333333"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><SPAN STYLE="background: #ffffff">
+</SPAN></FONT></FONT></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=3>The
+quality of service defaults to QoS 0. You can use either QoS 0 or QoS
+1. For more information about QoS support in AWS IoT, see&nbsp;<A HREF="https://docs.aws.amazon.com/console/iot/protocols/mqtt">the
+</A></FONT></FONT><A HREF="https://docs.aws.amazon.com/console/iot/protocols/mqtt"><FONT COLOR="#0000ff"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>documentation</FONT></FONT></FONT></A><FONT COLOR="#333333"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><SPAN STYLE="background: #ffffff">.</SPAN></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2; text-decoration: none">
+<BR><BR>
+</P>
+<OL START=2>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>Run zwg3m_publish.py for
+	publish from the device and zwg3m_susbscribe.py for subscribing. </FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img25.png" NAME="shape1031" ALIGN=BOTTOM WIDTH=545 HEIGHT=268 BORDER=0>
+</P>
+<OL START=3>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>Using AWS IoT device
+	shadow, users can also update and get shadow information with amazon
+	reserved shadow topics. Please modify your pub.json so ZWG3M can
+	publish messages to thing shadow.  </FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="Segoe UI, serif"><FONT SIZE=3>For shadow usage, refer to </FONT></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+<A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html</A></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img27.png" NAME="그림 15" ALIGN=BOTTOM WIDTH=408 HEIGHT=82 BORDER=0></P>
+<OL START=4>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>Run zwg3m_publish.py to
+	publish. Updated shadow states as in pub.json will be shown in
+	thing’s Shadow State. </FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img6.png" NAME="그림 22" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<P ALIGN=LEFT STYLE="text-indent: 0.07in; margin-bottom: 0in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="text-indent: 0.08in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Subscribe
+Messages </B></FONT></FONT></FONT>
+</P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>Modify sub.json with your
+	topic, QoS and payload</FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="Segoe UI, serif"><FONT SIZE=3>sub.json </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img19.png" NAME="그림 25" ALIGN=BOTTOM WIDTH=432 HEIGHT=86 BORDER=0></P>
+<OL START=2>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>Run zwg3m_subscribe.py for
+	subscribing. </FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>To publish MQTT messages
+	from the MQTT client, </FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>sign
+	in to the </FONT></FONT></FONT><A HREF="https://console.aws.amazon.com/iotv2/"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>AWS
+	IoT console</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.
+	</FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>I</FONT></FONT></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt">n
+	the left navigation pane, choose </FONT></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>Test
+	</B></FONT></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt">to
+	open the MQTT client. </FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>On the MQTT client page,
+	in the Publish section, in the Specify a topic and a message to
+	publish field, enter the topic name of your message. In this
+	example, use ZWG3M/test.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>In the message payload
+	window, enter the following json:</FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#16191f"><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt">{</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#16191f"><SPAN STYLE="background: #f9f9f9">   
+</SPAN></FONT><FONT COLOR="#986801"><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt">&quot;reported&quot;</FONT></FONT></FONT><FONT COLOR="#16191f"><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><SPAN STYLE="background: #f9f9f9">:
+{</SPAN></FONT></FONT></FONT><FONT COLOR="#0b6125"><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt">&quot;temp”
+</FONT></FONT></FONT><FONT COLOR="#16191f"><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><SPAN STYLE="background: #f9f9f9">:30}</SPAN></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#16191f"><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><SPAN STYLE="background: #f9f9f9">}</SPAN></FONT></FONT></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+</FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="img/zwg3m-GettingStarted/img14.png" NAME="그림 13" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=7>
+	<LI><P STYLE="margin-bottom: 0.11in"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>By
+	publish MQTT message using amazon console, topic and payload will be
+	shown in python shell as below.  </FONT></FONT>
+	</P>
+</OL>
+<P STYLE="margin-left: 0.28in; margin-bottom: 0.11in"><IMG SRC="img/zwg3m-GettingStarted/img20.png" NAME="shape1033" ALIGN=BOTTOM WIDTH=567 HEIGHT=78 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=4 STYLE="font-size: 15pt"><B>Device
+Shadow: Update/Delta </B></FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>ZWG3M
+publishes updates and display delta using python scripts:
+zwg3m_update.py , zwg3m_delta.py. </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Update
+shadows </B></FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>ZWG3M
+publishes updates to the AWS IoT Device Shadow using python code
+provided. </FONT></FONT></FONT>
+</P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>Modify update.json with
+	your input. </FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img23.png" NAME="shape1034" ALIGN=BOTTOM WIDTH=430 HEIGHT=118 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; text-indent: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="Segoe UI, serif"><FONT SIZE=3>The parameter information
+for shadow update is as below.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; text-indent: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img29.png" NAME="그림 16" ALIGN=BOTTOM WIDTH=492 HEIGHT=190 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; text-indent: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="Segoe UI, serif"><FONT SIZE=3>For shadow document
+examples, refer to:</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.49in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-document.html#device-shadow-document-syntax"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-document.html#device-shadow-document-syntax</FONT></FONT></A></P>
+<OL START=2>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>Run zwg3m_update.py.
+	Python shell will display successful execution of shadow updates.
+	You can also observe updated shadow values on your AWS console,
+	thing’s shadow state. </FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.28in; text-indent: 0.14in; margin-bottom: 0in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img26.png" NAME="shape1035" ALIGN=BOTTOM WIDTH=543 HEIGHT=60 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.28in; text-indent: 0.14in; margin-bottom: 0in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.28in; text-indent: 0.14in; margin-bottom: 0in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img12.png" NAME="그림 18" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Delta</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Delta
+in shadows are useful indicator which contains difference between the
+desired and reported states. This will not show on shadow if desired
+and reported states are the same or there is no desired part in Thing
+shadow. Below AT command will report delta states of the item when it
+triggers with delta.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>For
+more information about delta, refer to: </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-document.html#delta-state"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-document.html#delta-state</FONT></FONT></A></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Below
+is the example of running the delta function in python. Please modify
+'update.json' file with your key and type before running delta
+function. </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Run
+zwg3m-delta.py. It will return item with desired states.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img4.png" NAME="그림 20" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img28.png" NAME="그림 23" ALIGN=BOTTOM WIDTH=602 HEIGHT=69 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Troubleshooting
+</B></FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=4 STYLE="font-size: 15pt"><B>Download
+fail</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>If
+you encounter errors while downloading firmware, check the comport
+number and path in zwg3m_flash.bat and flash_download.cfg.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Ensure
+the UART_DL(JP3) is set to low and JP1 = H_BOOT for download mode. </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted/img21.png" NAME="그림 43" ALIGN=BOTTOM WIDTH=400 HEIGHT=360 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=4 STYLE="font-size: 15pt"><B>Connection
+fail</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Be
+sure to configure AWS IoT and your FreeRTOS download to connect your
+device to the AWS Cloud. You can use below steps to check the device
+settings. </FONT></FONT></FONT>
+</P>
+<OL>
+	<OL>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+		<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Connect
+		the device with host computer</FONT></FONT></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+		<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Open
+		terminal program (ex. hterm) </FONT></FONT></FONT>
+		</P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+		<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Check
+		settings using </FONT></FONT></FONT><A HREF="https://ictk-solution-dev.github.io/zwg3m/files/ZWG3M-ATcommand-v1.0.pdf"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>AT
+		command set</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+		. Make sure all the configurations are set correctly. </FONT></FONT></FONT>
+		</P>
+	</OL>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 1.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">ex) AT+AWS_EP?  
+	+AWS_EP: your_host_url  </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.5in; text-indent: 0.21in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">AT+AWS_TN? 
+ 	+WIFI_TN : your thing name</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.5in; text-indent: 0.21in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">AT+WIFI_SSID_STA? 
+ 	+WIFI_SSID_STA : your Wi-Fi ID</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.5in; text-indent: 0.21in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">AT+WIFI_PW_STA? 
+	+WIFI_PW_STA : your Wi-Fi password</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+<BR><BR>
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>If
+these steps don’t work, please contact </FONT></FONT></FONT><A HREF="mailto:zn@ictk.com"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>zn@ictk.com</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.11in; widows: 2; orphans: 2">
+</P>
+<P STYLE="margin-bottom: 0.11in; widows: 2; orphans: 2"><BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Additional
+Information</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.11in; widows: 2; orphans: 2"><FONT COLOR="#212529"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>TPM/SE
+security : G3 PUF IC</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.17in"><A HREF="https://ictk-solution-dev.github.io/zwg3m/TrustFi-security.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>TrustFi-security</FONT></FONT></A></P>
+<P STYLE="margin-bottom: 0.11in; widows: 2; orphans: 2"><A HREF="https://ictk-solution-dev.github.io/zwg3m/zwg3m-Secured%20Iot%20Platform.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Secured
+IoT Planform</FONT></FONT></A><FONT COLOR="#212529"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+</FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR>
+</P>
+</BODY>
+</HTML>

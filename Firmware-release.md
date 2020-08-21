@@ -2,9 +2,10 @@
 ---
 
 
-### Build : [b1910a](/firmware/b1910a.bin)
+#### Release:
 
-- Release date : 10 October 2019
+- [b1910a](https://github.com/ictk-solution-dev/amazon-iot-b1910a.git)
+
 
 #### Features:
 
@@ -26,4 +27,6 @@
 
 #### Fixes:
 
-- None
+- b1910a : Initial release (10 October 2019)
+
+
