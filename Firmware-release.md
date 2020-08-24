@@ -5,7 +5,7 @@
 #### Release:
 
 - [b1910a](https://github.com/ictk-solution-dev/amazon-iot-b1910a.git)
-
+- [b2005a](https://github.com/ictk-solution-dev/amazon-iot-b2005a.git)
 
 #### Features:
 
@@ -28,5 +28,6 @@
 #### Fixes:
 
 - b1910a : Initial release (10 October 2019)
+- b2005a : Wifi configuration error fixed. (15 May 2020)
 
 
